@@ -14,6 +14,8 @@ class Countries extends Component {
     this.state = {
       countries: [],
       selected: [],
+      languages: [],
+      currencies: []
     };
 
     this.getApi = this.getApi.bind(this);
@@ -45,6 +47,12 @@ class Countries extends Component {
   }
 
   render() {
+
+    const languages = this.state.selected.languages;
+    console.log(languages);
+    //const language = languages.map(item => item.name);
+    //console.log(language);
+
     return (
       <div>
         <Container maxWidth='sm' className='container'>
@@ -79,6 +87,9 @@ class Countries extends Component {
             </p>
             <p>
               Sub-Region: <span>{this.state.selected.subregion}</span>
+            </p>
+            <p>
+              Languages: 
             </p>
           </div>
         </Container>
