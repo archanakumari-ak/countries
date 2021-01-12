@@ -1,7 +1,14 @@
 .footer {
     bottom: 0;
     left: 0;
-    background-color: #8082833d ;
+    /* background-color: #8082833d ; */
     width: 100%;
-    position: fixed;
+    position: fixed; 
+}
+a{
+    text-decoration: none;
+    color: gray;
+}
+a:hover {
+    color: white;
 }

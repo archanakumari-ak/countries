@@ -14,8 +14,6 @@ class Countries extends Component {
     this.state = {
       countries: [],
       selected: [],
-      languages: [],
-      currencies: []
     };
 
     this.getApi = this.getApi.bind(this);
@@ -30,7 +28,6 @@ class Countries extends Component {
     axios.get(url).then((response) => {
       const countries = response.data;
       console.log(countries);
-
       this.setState({ countries });
       this.setState({ selected: countries[104] });
     });
@@ -44,15 +41,9 @@ class Countries extends Component {
     const num = parseInt(number);
     const str = num.toLocaleString("en-US");
     return str;
-  }
+  };
 
   render() {
-
-    const languages = this.state.selected.languages;
-    console.log(languages);
-    //const language = languages.map(item => item.name);
-    //console.log(language);
-
     return (
       <div>
         <Container maxWidth='sm' className='container'>
@@ -80,7 +71,8 @@ class Countries extends Component {
               Capital: <span>{this.state.selected.capital}</span>
             </p>
             <p>
-              Population: <span>{this.population(this.state.selected.population)}</span>
+              Population:{" "}
+              <span>{this.population(this.state.selected.population)}</span>
             </p>
             <p>
               Region: <span>{this.state.selected.region}</span>
@@ -89,7 +81,7 @@ class Countries extends Component {
               Sub-Region: <span>{this.state.selected.subregion}</span>
             </p>
             <p>
-              Languages: 
+              Demonym: <span>{this.state.selected.demonym}</span>
             </p>
           </div>
         </Container>
